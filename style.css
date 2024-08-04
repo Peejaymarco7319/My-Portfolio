@@ -487,55 +487,97 @@ span{
     }
 }
 
-.services{
+/* General styles for the services section */
+.services {
     background: var(--bg-color);
     color: black;
+    padding: 5rem 2rem; /* Adjusted padding for better fit */
 }
-.services h2{
-    margin-bottom: 5rem;
+.services h2 {
+    margin-bottom: 3rem; /* Adjusted margin */
     color: white;
+    font-size: 4rem; /* Adjust font size if necessary */
 }
-.services-container{
+
+/* Services container layout */
+.services-container {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    align-items: center;
-    gap: 2.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; /* Adjusted gap */
 }
-.service-box{
+
+/* Individual service box styles */
+.service-box {
     background-color: var(--main-color);
-    height: 300px;
-    border-radius: 3rem;
+    border-radius: 1.5rem; /* Adjusted border radius */
     border: 5px solid transparent;
     cursor: pointer;
     transition: 0.4s ease-in-out;
+    padding: 2rem; /* Adjusted padding */
+    box-sizing: border-box; /* Ensure padding is included in the width */
 }
-.service-box:hover{
+
+/* Hover effect for service boxes */
+.service-box:hover {
     background: white;
     color: black;
     border: 5px solid var(--main-color);
     transform: scale(1.03);
 }
-.service-box .service-info{
-    display: flex;
-    flex-direction: column;
+
+/* Service info styling */
+.service-info {
     text-align: left;
     max-height: 200px;
-    justify-content: left;
-    align-items: baseline;
-    padding: 5rem 5rem;
+    overflow: hidden; /* Ensure overflow is handled */
 }
-.service-info h4{
-    font-size: 3rem;
+
+/* Heading and paragraph within service info */
+.service-info h4 {
+    font-size: 2.5rem; /* Adjusted font size */
     font-weight: 800;
-    line-height: 2;
+    line-height: 1.5;
+    margin-bottom: 1rem; /* Margin between heading and paragraph */
 }
-.service-info p{
-    font-size: 1.6rem;
-    font-weight: 600;
-    max-height: 100px;
-    line-height: 1.7;
-    margin: auto;
+.service-info p {
+    font-size: 1.4rem; /* Adjusted font size */
+    font-weight: 500;
+    line-height: 1.6;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr; /* Stack items vertically */
+    }
+    .service-box {
+        height: auto; /* Allow flexible height */
+        padding: 1.5rem; /* Adjusted padding */
+    }
+    .service-info h4 {
+        font-size: 2rem; /* Adjusted font size */
+    }
+    .service-info p {
+        font-size: 1.2rem; /* Adjusted font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .services {
+        padding: 3rem 1rem; /* Further adjusted padding */
+    }
+    .service-box {
+        padding: 1rem; /* Further adjusted padding */
+    }
+    .service-info h4 {
+        font-size: 1.8rem; /* Further adjusted font size */
+    }
+    .service-info p {
+        font-size: 1rem; /* Further adjusted font size */
+    }
+}
+
+/* Skills section */
 .skills {
     padding: 100px 15px;
     background: var(--second-bg-color);
@@ -551,26 +593,32 @@ span{
     margin-top: 2rem;
 }
 
+/* Grid layout for the bars */
 .skills .container .row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive layout */
     gap: 1.8rem;
 }
 
+/* Individual skill bar styling */
 .skills .container .bar {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
     padding: 10px;
     border-radius: 1rem;
     background: var(--bg-color);
     transition: 0.3s ease;
+    text-align: center; /* Center text */
 }
 
+/* Hover effect for bars */
 .skills .container .bar:hover {
     box-shadow: 0 4px 10px var(--main-color);
 }
 
+/* Icon within the bar */
 .skills .container .bar .icon-link {
     display: inline-flex;
     justify-content: center;
@@ -582,10 +630,11 @@ span{
     font-size: 3.5rem; /* Increased icon size */
     border-radius: 50%; /* Circular background */
     color: var(--main-color); /* Icon color */
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /* Margin between icon and text */
     transition: 0.3s ease-in-out;
 }
 
+/* Hover effect for icon link */
 .skills .container .bar .icon-link:hover {
     color: var(--text-color);
     transform: scale(1.3) translateY(-5px);
@@ -593,11 +642,14 @@ span{
     box-shadow: 0 0 25px var(--main-color);
 }
 
+/* Text below the icon */
 .skills .container .bar span {
     font-size: 1.5rem; /* Adjust font size as needed */
     font-weight: 500;
     color: var(--text-color);
+    text-align: center; /* Center text */
 }
+
 
 
 .contact{
