@@ -312,11 +312,10 @@ span{
     height: 21px;
     width: 21px;
     background-color: var(--main-color);
-    box-shadow: 0 0 25px var(--main-color),
-                0 0 50px var(--main-color);
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); /* Center the dot on the line */
+    transform: translateX(-110%); /* Center the dot on the line */
     border-radius: 50%;
     top: 0; /* Align the dot to the top */
 }
@@ -330,7 +329,7 @@ span{
     left: 50%;
     transform: translateX(-50%); /* Center the line */
     top: 21px; /* Start the line from the bottom of the dot */
-    height: calc(100% - 25px); /* Adjust height to connect to the next dot */
+    height: calc(100% - 21px); /* Adjust height to connect to the next dot */
 }
 
 /* Timeline date styling */
@@ -342,7 +341,7 @@ span{
     position: absolute;
     left: 50%;
     transform: translateX(-50%); /* Center the date under the dot */
-    top: 25px; /* Position the date below the dot */
+    top: 30px; /* Adjust to ensure proper alignment */
     text-align: center; /* Center the text */
 }
 
@@ -381,13 +380,113 @@ span{
 ::-webkit-scrollbar {
     width: 15px;
 }
+
 ::-webkit-scrollbar-thumb {
     background-color: var(--main-color);
 }
+
 ::-webkit-scrollbar-track {
     background-color: var(--bg-color);
     width: 50px;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .timeline-items {
+        padding: 0 10px; /* Less padding on smaller screens */
+    }
+
+    .timeline-item {
+        padding: 0; /* Remove side padding for vertical layout */
+        display: block; /* Stack items vertically */
+        text-align: center; /* Center align text */
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        padding: 0;
+        text-align: center;
+    }
+
+    .timeline-dot {
+        position: relative;
+        margin: 0 auto; /* Center the dot */
+        top: -20px; /* Adjust vertical position */
+        height: 16px;
+        width: 16px;
+    }
+
+    .timeline-dot::after {
+        content: "";
+        position: relative;
+        width: 2px; /* Adjust line width */
+        height: 50px; /* Adjust height for vertical spacing */
+        margin-top: 5px; /* Add margin for spacing between dots */
+    }
+
+    .timeline-date {
+        font-size: 14px;
+        top: -24px; /* Move date slightly higher */
+    }
+
+    .timeline-content {
+        padding: 20px;
+        border-radius: 2rem;
+        margin: 0 auto; /* Center the content */
+        box-shadow: 0 0 10px var(--main-color);
+    }
+
+    .timeline-content h3 {
+        font-size: 18px;
+    }
+
+    .timeline-content p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-items {
+        padding: 0 5px; /* Even less padding on very small screens */
+    }
+
+    .timeline-item {
+        padding: 0; /* Remove side padding for vertical layout */
+        text-align: center; /* Center align text */
+    }
+
+    .timeline-dot {
+        height: 12px;
+        width: 12px;
+        margin: -0; /* Ensure dot is centered */
+        top: -10px; /* Adjust vertical position */
+    }
+
+    .timeline-dot::after {
+        height: 30px; /* Adjust height for vertical spacing */
+    }
+
+    .timeline-date {
+        font-size: 12px;
+        top: -14px; /* Move date even higher */
+    }
+
+    .timeline-content {
+        padding: 15px;
+        border-radius: 1rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 16px;
+    }
+
+    .timeline-content p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
 .services{
     background: var(--bg-color);
     color: black;
